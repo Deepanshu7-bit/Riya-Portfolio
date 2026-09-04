@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --canvas: #F7F5F0;
+    --canvas-subtle: #EFECE4;
+    --canvas-card: #FFFFFF;
+    --ink: #121214;
+    --ink-muted: #666460;
+    --border: #121214;
+    --coral: #FF4D4D;
+    --cobalt: #2B4CFF;
+    --lime: #D4FF32;
+  }
+
+  .dark {
+    --canvas: #0E0E10;
+    --canvas-subtle: #18181C;
+    --canvas-card: #141416;
+    --ink: #F4F4F6;
+    --ink-muted: #9D9DA6;
+    --border: #2E2E36;
+    --coral: #FF5C5C;
+    --cobalt: #3D60FF;
+    --lime: #D4FF32;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color: var(--ink);
+    background-color: var(--canvas);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background-color: #FF4D4D;
+    color: #FFFFFF;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--canvas-subtle);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #121214;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3E3E48;
+}
+
+/* Tactile neo-editorial utility classes */
+@layer components {
+  .btn-tactile-primary {
+    @apply relative inline-flex items-center justify-center gap-2 font-display font-bold px-6 py-3.5 text-sm uppercase tracking-wider rounded-xl bg-ink text-canvas-pure border-2 border-ink shadow-tactile transition-all duration-200 hover:-translate-y-0.5 hover:shadow-tactile-lg active:translate-y-1 active:shadow-tactile-sm dark:bg-canvas-pure dark:text-ink dark:border-canvas-pure dark:shadow-tactile-dark;
+  }
+
+  .btn-tactile-coral {
+    @apply relative inline-flex items-center justify-center gap-2 font-display font-bold px-6 py-3.5 text-sm uppercase tracking-wider rounded-xl bg-brand-coral text-white border-2 border-ink shadow-tactile transition-all duration-200 hover:-translate-y-0.5 hover:shadow-tactile-lg active:translate-y-1 active:shadow-tactile-sm;
+  }
+
+  .btn-tactile-lime {
+    @apply relative inline-flex items-center justify-center gap-2 font-display font-bold px-6 py-3.5 text-sm uppercase tracking-wider rounded-xl bg-brand-lime text-ink border-2 border-ink shadow-tactile transition-all duration-200 hover:-translate-y-0.5 hover:shadow-tactile-lg active:translate-y-1 active:shadow-tactile-sm;
+  }
+
+  .btn-tactile-outline {
+    @apply relative inline-flex items-center justify-center gap-2 font-display font-bold px-6 py-3.5 text-sm uppercase tracking-wider rounded-xl bg-transparent text-ink border-2 border-ink shadow-tactile transition-all duration-200 hover:bg-canvas-subtle hover:-translate-y-0.5 hover:shadow-tactile-lg active:translate-y-1 active:shadow-tactile-sm dark:text-canvas-pure dark:border-ink-darkMuted dark:shadow-tactile-dark dark:hover:bg-canvas-darkSubtle;
+  }
+
+  .badge-tag {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider border;
+  }
+
+  .editorial-card {
+    @apply bg-white border-2 border-ink rounded-2xl p-6 shadow-tactile transition-all duration-300 hover:shadow-tactile-lg dark:bg-canvas-darkCard dark:border-zinc-800 dark:shadow-none;
+  }
+}
+
+/* Dot grid background pattern */
+.bg-dots {
+  background-image: radial-gradient(rgba(18, 18, 20, 0.12) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+
+.dark .bg-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+}
+
+/* Diagonal line background pattern */
+.bg-lines {
+  background-image: repeating-linear-gradient(45deg, rgba(18, 18, 20, 0.03) 0, rgba(18, 18, 20, 0.03) 1px, transparent 0, transparent 14px);
+}
+
+.dark .bg-lines {
+  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 1px, transparent 0, transparent 14px);
+}
