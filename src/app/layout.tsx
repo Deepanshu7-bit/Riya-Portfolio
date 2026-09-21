@@ -84,7 +84,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${spaceGrotesk.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-sans bg-canvas text-ink antialiased selection:bg-brand-coral selection:text-white min-h-screen flex flex-col`}
+        className={`${spaceGrotesk.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-sans bg-canvas text-ink antialiased selection:bg-brand-coral selection:text-white min-h-screen flex flex-col w-full max-w-full overflow-x-hidden`}
       >
         {children}
       </body>

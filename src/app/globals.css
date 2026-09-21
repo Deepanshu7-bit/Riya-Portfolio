@@ -32,6 +32,16 @@
     color: var(--ink);
     background-color: var(--canvas);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    overflow-x: hidden;
+    max-width: 100vw;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
   }
 
   ::selection {
@@ -42,8 +52,8 @@
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -59,30 +69,39 @@
   background: #3E3E48;
 }
 
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Tactile neo-editorial utility classes */
 @layer components {
   .btn-tactile-primary {
-    @apply relative inline-flex items-center justify-center gap-2 font-display font-bold px-6 py-3.5 text-sm uppercase tracking-wider rounded-xl bg-ink text-canvas-pure border-2 border-ink shadow-tactile transition-all duration-200 hover:-translate-y-0.5 hover:shadow-tactile-lg active:translate-y-1 active:shadow-tactile-sm dark:bg-canvas-pure dark:text-ink dark:border-canvas-pure dark:shadow-tactile-dark;
+    @apply relative inline-flex items-center justify-center gap-2 font-display font-bold px-4 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm uppercase tracking-wider rounded-xl bg-ink text-canvas-pure border-2 border-ink shadow-tactile transition-all duration-200 hover:-translate-y-0.5 hover:shadow-tactile-lg active:translate-y-1 active:shadow-tactile-sm dark:bg-canvas-pure dark:text-ink dark:border-canvas-pure dark:shadow-tactile-dark;
   }
 
   .btn-tactile-coral {
-    @apply relative inline-flex items-center justify-center gap-2 font-display font-bold px-6 py-3.5 text-sm uppercase tracking-wider rounded-xl bg-brand-coral text-white border-2 border-ink shadow-tactile transition-all duration-200 hover:-translate-y-0.5 hover:shadow-tactile-lg active:translate-y-1 active:shadow-tactile-sm;
+    @apply relative inline-flex items-center justify-center gap-2 font-display font-bold px-4 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm uppercase tracking-wider rounded-xl bg-brand-coral text-white border-2 border-ink shadow-tactile transition-all duration-200 hover:-translate-y-0.5 hover:shadow-tactile-lg active:translate-y-1 active:shadow-tactile-sm;
   }
 
   .btn-tactile-lime {
-    @apply relative inline-flex items-center justify-center gap-2 font-display font-bold px-6 py-3.5 text-sm uppercase tracking-wider rounded-xl bg-brand-lime text-ink border-2 border-ink shadow-tactile transition-all duration-200 hover:-translate-y-0.5 hover:shadow-tactile-lg active:translate-y-1 active:shadow-tactile-sm;
+    @apply relative inline-flex items-center justify-center gap-2 font-display font-bold px-4 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm uppercase tracking-wider rounded-xl bg-brand-lime text-ink border-2 border-ink shadow-tactile transition-all duration-200 hover:-translate-y-0.5 hover:shadow-tactile-lg active:translate-y-1 active:shadow-tactile-sm;
   }
 
   .btn-tactile-outline {
-    @apply relative inline-flex items-center justify-center gap-2 font-display font-bold px-6 py-3.5 text-sm uppercase tracking-wider rounded-xl bg-transparent text-ink border-2 border-ink shadow-tactile transition-all duration-200 hover:bg-canvas-subtle hover:-translate-y-0.5 hover:shadow-tactile-lg active:translate-y-1 active:shadow-tactile-sm dark:text-canvas-pure dark:border-ink-darkMuted dark:shadow-tactile-dark dark:hover:bg-canvas-darkSubtle;
+    @apply relative inline-flex items-center justify-center gap-2 font-display font-bold px-4 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm uppercase tracking-wider rounded-xl bg-transparent text-ink border-2 border-ink shadow-tactile transition-all duration-200 hover:bg-canvas-subtle hover:-translate-y-0.5 hover:shadow-tactile-lg active:translate-y-1 active:shadow-tactile-sm dark:text-canvas-pure dark:border-ink-darkMuted dark:shadow-tactile-dark dark:hover:bg-canvas-darkSubtle;
   }
 
   .badge-tag {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider border;
+    @apply inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-mono font-semibold uppercase tracking-wider border;
   }
 
   .editorial-card {
-    @apply bg-white border-2 border-ink rounded-2xl p-6 shadow-tactile transition-all duration-300 hover:shadow-tactile-lg dark:bg-canvas-darkCard dark:border-zinc-800 dark:shadow-none;
+    @apply bg-white border-2 border-ink rounded-2xl p-5 sm:p-6 shadow-tactile transition-all duration-300 hover:shadow-tactile-lg dark:bg-canvas-darkCard dark:border-zinc-800 dark:shadow-none;
   }
 }
 

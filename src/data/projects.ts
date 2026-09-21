@@ -2,6 +2,47 @@ import { Project } from '@/types';
 
 export const projectsData: Project[] = [
   {
+    id: 'singh-bake-brand-impression',
+    title: 'Singh Bake & Bites: 360° Digital Impression',
+    subtitle: 'End-to-end brand identity, tactile packaging, promotional post suites & high-energy video motion reels',
+    category: 'social',
+    categoryLabel: 'Brand Socials & Motion',
+    description: 'A complete 360° digital and physical brand transformation for artisanal bakery "Singh Bake & Bites". Created a vibrant, appetising visual language spanning brand logo vectorization, eco-craft paperbag packaging, multi-part social campaign post suites, and high-retention video motion reels.',
+    challenge: 'Artisanal food brands in a competitive market need more than static photos. They require a cohesive identity system that feels tactile in real life and magnetic on digital feeds, stopping user scrolls within the first 500ms.',
+    visualDirection: 'Warm bakery amber tones, rustic eco-craft textures, modern bold typography, appetizing dynamic close-up framing, and kinetic video motion cuts.',
+    deliverables: [
+      'Brand Identity & Logo Vector Architecture',
+      'Eco-Craft Paperbag Packaging Mockup & Print Specs',
+      'Instagram Social Media Campaign Posts (Set of 3+)',
+      'High-Energy Video Motion Reels & Tutorial Cuts',
+      'Promotional Launch Discount Creatives'
+    ],
+    tools: ['Figma', 'Photoshop', 'Premiere Pro', 'After Effects'],
+    colors: [
+      { name: 'Bakery Amber', hex: '#E07A28' },
+      { name: 'Warm Cream', hex: '#FDFBF7' },
+      { name: 'Deep Espresso', hex: '#261B14' },
+      { name: 'Rustic Gold', hex: '#D4A373' }
+    ],
+    heroImage: '/singh-bake/sb-brand-post.png',
+    galleryImages: [
+      '/singh-bake/sb-brand-post.png',
+      '/singh-bake/biscuit-post.png',
+      '/singh-bake/wholesale-post.png',
+      '/singh-bake/post-2.png',
+      '/singh-bake/logo.png',
+      '/singh-bake/paperbag.png'
+    ],
+
+    featured: true,
+    accentColor: '#E07A28',
+    badgeBg: 'bg-amber-500/10 text-amber-700 border-amber-500/30 dark:bg-amber-500/20 dark:text-amber-300',
+    badgeText: 'Flagship 360° Case Study',
+    year: '2025',
+    clientContext: 'Complete brand overhaul & social launch for artisanal bakery Singh Bake & Bites.',
+    takeaway: 'Combining cohesive packaging with high-energy video motion reels creates an irresistible 360° digital impression.'
+  },
+  {
     id: 'academy-career-launch',
     title: 'Next-Gen Tech Academy Campaigns',
     subtitle: 'High-conversion admission posters, orientation announcements & bootcamp promotional design',

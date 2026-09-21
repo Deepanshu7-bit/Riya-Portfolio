@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Sparkles, MessageCircle, FileText, Palette, CheckCircle2, Rocket, RefreshCw } from 'lucide-react';
 
 export default function ClientJourney() {
@@ -44,18 +45,25 @@ export default function ClientJourney() {
   ];
 
   return (
-    <section className="py-24 sm:py-32 bg-canvas relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <section className="py-14 sm:py-20 lg:py-24 bg-canvas relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-ink/10 pb-8">
+
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-ink/10 pb-8"
+        >
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 text-xs font-mono text-brand-coral uppercase tracking-widest">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Client Roadmap / 11</span>
             </div>
-            <h2 className="font-display font-black text-4xl sm:text-6xl tracking-tight text-ink uppercase">
-              What Happens After <br />
+            <h2 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl tracking-tight text-ink uppercase break-words">
+              What Happens After <br className="hidden sm:inline" />
               <span className="text-brand-cobalt">You Hit Send?</span>
             </h2>
           </div>
@@ -63,16 +71,21 @@ export default function ClientJourney() {
           <p className="font-sans text-sm sm:text-base text-ink-muted max-w-md leading-relaxed">
             Zero ambiguity. A predictable, transparent 6-stage roadmap from initial hello to final master asset delivery.
           </p>
-        </div>
+        </motion.div>
 
         {/* 6-Step Journey Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {steps.map((s) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          {steps.map((s, index) => {
             const Icon = s.icon;
             return (
-              <div
+              <motion.div
                 key={s.num}
-                className="p-8 rounded-3xl border-2 border-ink bg-white shadow-tactile hover:shadow-tactile-lg hover:-translate-y-1 transition-all duration-200 space-y-4 flex flex-col justify-between"
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="p-6 sm:p-8 rounded-3xl border-2 border-ink bg-white shadow-tactile hover:shadow-tactile-lg transition-shadow duration-200 space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
@@ -84,7 +97,7 @@ export default function ClientJourney() {
                     </span>
                   </div>
 
-                  <h3 className="font-display font-bold text-xl text-ink uppercase tracking-tight">
+                  <h3 className="font-display font-bold text-lg sm:text-xl text-ink uppercase tracking-tight">
                     {s.title}
                   </h3>
                   <p className="text-xs sm:text-sm font-sans text-ink-muted leading-relaxed">
@@ -92,11 +105,11 @@ export default function ClientJourney() {
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-ink/10 flex items-center gap-1 text-[11px] font-mono text-emerald-700">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
+                <div className="pt-3 border-t border-ink/10 flex items-center gap-1.5 text-[11px] font-mono text-emerald-700">
+                  <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0" />
                   <span>Clear &amp; Transparent</span>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
@@ -105,3 +118,4 @@ export default function ClientJourney() {
     </section>
   );
 }
+

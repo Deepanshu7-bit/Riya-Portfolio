@@ -51,9 +51,13 @@ export interface MotionItem {
   category: string;
   description: string;
   thumbnail: string;
+  videoUrl?: string;
   duration: string;
   software: string[];
   aspectRatio: '9:16' | '16:9' | '1:1';
   motionFocus: string;
   colorTone: string;
+  client?: string;
+  tag?: string;
 }
+

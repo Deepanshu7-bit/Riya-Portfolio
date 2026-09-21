@@ -32,3 +32,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw heavy media sources (processed assets live in /public)
+/Singh bake social media campagin/
+/shalu nisha reels/
