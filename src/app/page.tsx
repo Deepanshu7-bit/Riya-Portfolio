@@ -10,11 +10,8 @@ import MotionSection from '@/components/MotionSection';
 import BrandingSection from '@/components/BrandingSection';
 import Process from '@/components/Process';
 import BehindTheWork from '@/components/BehindTheWork';
-import Services from '@/components/Services';
-import WhyRiya from '@/components/WhyRiya';
 import About from '@/components/About';
-import Playground from '@/components/Playground';
-import ClientJourney from '@/components/ClientJourney';
+import WhyRiya from '@/components/WhyRiya';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -32,11 +29,8 @@ export default function Home() {
       <BrandingSection />
       <Process />
       <BehindTheWork />
-      <Services />
-      <WhyRiya />
       <About />
-      <Playground />
-      <ClientJourney />
+      <WhyRiya />
       <Contact />
       <Footer />
     </main>

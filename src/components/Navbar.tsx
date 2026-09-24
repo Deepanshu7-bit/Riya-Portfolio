@@ -32,10 +32,8 @@ export default function Navbar() {
     { name: 'Work', href: '#work' },
     { name: 'Case Study', href: '#singh-bake' },
     { name: 'Motion', href: '#motion' },
-    { name: 'Services', href: '#services' },
     { name: 'Process', href: '#process' },
     { name: 'About', href: '#about' },
-    { name: 'Playground', href: '#playground' },
     { name: 'Contact', href: '#contact' },
   ];
 

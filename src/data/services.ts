@@ -24,7 +24,7 @@ export const servicesData: ServiceItem[] = [
     tagline: 'Creatives engineered for instant feed retention.',
     description: 'Designing high-impact static posts, multi-slide carousels, announcement banners, and promotional campaigns. Every asset is structured for maximum visual clarity, thumb-stopping contrast, and measurable conversion.',
     deliverables: [
-      'Instagram Posts & Story Sets',
+      'Social Posts & Story Sets',
       'Educational & Multi-Slide Carousels',
       'Event & Webinar Promotion Creatives',
       'Ad Creatives for Meta & LinkedIn'

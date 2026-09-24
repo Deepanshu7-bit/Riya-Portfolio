@@ -117,7 +117,7 @@ export default function BehindTheWork() {
               3-Second Retention Architecture
             </h3>
             <p className="text-xs sm:text-sm font-sans text-ink-muted leading-relaxed">
-              When a user scrolls Instagram or LinkedIn, our eyes scan in a rapid Z-pattern. The headline catches the glance, the color temperature creates the emotion, and the badge directs the click.
+              When a user scrolls through social feeds, eyes scan in a rapid Z-pattern. The headline catches the glance, the color temperature creates the emotion, and the badge directs the click.
             </p>
             <div className="space-y-2 pt-2 text-[11px] sm:text-xs font-mono text-ink">
               <div className="flex items-center gap-2">

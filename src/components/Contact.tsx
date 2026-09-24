@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Mail, Phone, Instagram, Send, CheckCircle2, Copy, Check } from 'lucide-react';
+import { Sparkles, Mail, Phone, Send, CheckCircle2, Copy, Check } from 'lucide-react';
 
 export default function Contact() {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -28,16 +28,16 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-14 sm:py-20 lg:py-24 bg-ink text-white relative overflow-hidden border-t-2 border-ink scroll-mt-20 sm:scroll-mt-28">
-      
+
       {/* Background Ambient Glows */}
       <div className="absolute top-0 right-10 w-96 h-96 bg-brand-coral/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-96 h-96 bg-brand-cobalt/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12 relative z-10">
-        
+
         {/* Massive Final Headline */}
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
@@ -46,7 +46,7 @@ export default function Contact() {
         >
           <div className="inline-flex items-center gap-2 text-xs font-mono text-brand-lime uppercase tracking-widest">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Let&apos;s Build Together / 12</span>
+            <span>Let&apos;s Build Together / 09</span>
           </div>
 
           <h2 className="font-display font-black text-3xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.94] tracking-tighter uppercase text-white break-words">
@@ -65,16 +65,16 @@ export default function Contact() {
 
         {/* Contact Matrix: Direct Details (Left) + Inquiry Form (Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-          
+
           {/* Left Column: Direct Contact Info & Availability */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -25 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="lg:col-span-5 space-y-5 sm:space-y-6"
           >
-            
+
             {/* Direct Email Card */}
             <div className="p-5 sm:p-6 rounded-2xl border-2 border-zinc-800 bg-zinc-900/80 space-y-3 shadow-tactile-sm">
               <div className="text-xs font-mono text-zinc-400 uppercase">Direct Email</div>
@@ -118,23 +118,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Instagram Profile */}
-            <div className="p-5 sm:p-6 rounded-2xl border-2 border-zinc-800 bg-zinc-900/80 space-y-2.5 shadow-tactile-sm">
-              <div className="text-xs font-mono text-zinc-400 uppercase">Instagram Creative Feed</div>
-              <a
-                href="https://instagram.com/designxriya"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-display font-bold text-base sm:text-xl text-brand-coral hover:text-white transition-colors flex items-center gap-2"
-              >
-                <Instagram className="w-5 h-5 flex-shrink-0" />
-                <span>@designxriya</span>
-              </a>
-              <div className="text-xs text-zinc-400">
-                Behind the scenes, WIP experiments &amp; design snippets.
-              </div>
-            </div>
-
             {/* Availability Box */}
             <div className="p-5 sm:p-6 rounded-2xl border-2 border-brand-lime bg-zinc-900 space-y-2 shadow-tactile-sm">
               <div className="flex items-center gap-2">
@@ -151,7 +134,7 @@ export default function Contact() {
           </motion.div>
 
           {/* Right Column: Tactile Inquiry Form */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 25 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-40px' }}
@@ -159,7 +142,7 @@ export default function Contact() {
             className="lg:col-span-7"
           >
             <div className="p-6 sm:p-10 lg:p-12 rounded-3xl border-2 border-zinc-700 bg-zinc-900 shadow-2xl space-y-6">
-              
+
               <div className="space-y-1">
                 <h3 className="font-display font-black text-2xl sm:text-3xl text-white uppercase tracking-tight">
                   Project Inquiry Form

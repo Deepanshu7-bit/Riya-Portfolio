@@ -18,33 +18,34 @@ import {
   Palette,
   Film
 } from 'lucide-react';
+import AnimatedCounter from './AnimatedCounter';
 
 export default function SinghBakeCaseStudy() {
   // Video Reel State
   const reels = [
     {
       id: 'bites',
-      title: 'Signature Treats & Motion Cut',
-      subtitle: 'Dynamic typography, rapid pacing & sensory appetite appeal',
+      title: 'Signature Treats & AI Motion Cut',
+      subtitle: 'Generative AI visual synthesis, dynamic pacing & sensory appetite appeal',
       src: '/singh-bake/reel-bites.mp4',
-      tag: 'Product Reel / 01',
-      badge: 'High-Retention Cut',
+      tag: 'AI Video Reel / 01',
+      badge: '✨ AI Generated',
     },
     {
       id: 'tutorial',
-      title: 'Artisanal Craft & Tutorial Flow',
-      subtitle: 'Educational motion narrative showcasing baking precision',
+      title: 'Artisanal Craft & AI Process Flow',
+      subtitle: 'AI-generated motion narrative showcasing baking textures & precision',
       src: '/singh-bake/reel-tutorial.mp4',
-      tag: 'Process Reel / 02',
-      badge: 'Behind The Bake',
+      tag: 'AI Video Reel / 02',
+      badge: '✨ AI Generative Craft',
     },
     {
       id: 'promo',
-      title: 'Brand Launch & Social Teaser',
-      subtitle: 'Fast-cut promotional hook built for Instagram Discover feeds',
+      title: 'Brand Launch & AI Social Teaser',
+      subtitle: 'AI-synthesized promotional hook built for viral social discover feeds',
       src: '/singh-bake/reel-promo.mp4',
-      tag: 'Promo Reel / 03',
-      badge: 'Viral Hook',
+      tag: 'AI Video Reel / 03',
+      badge: '✨ AI Viral Hook',
     },
   ];
 
@@ -119,13 +120,13 @@ export default function SinghBakeCaseStudy() {
 
   return (
     <section id="singh-bake" className="py-14 sm:py-20 lg:py-24 bg-canvas-subtle/80 text-ink relative overflow-hidden border-t-2 border-b-2 border-ink scroll-mt-20 sm:scroll-mt-28">
-      
+
       {/* Ambient background blur */}
       <div className="absolute top-10 right-[-100px] w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-[-100px] w-96 h-96 bg-brand-coral/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 relative z-10">
-        
+
         {/* Section Header: Flagship Case Study Headline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -142,7 +143,7 @@ export default function SinghBakeCaseStudy() {
 
             <div className="flex items-center gap-2 text-xs font-mono text-ink-muted">
               <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-              <span>Identity • Packaging • Motion • Social</span>
+              <span>Identity • Packaging • AI Video • Social</span>
             </div>
           </div>
 
@@ -153,7 +154,7 @@ export default function SinghBakeCaseStudy() {
                 <span className="text-amber-600">Full Digital Impression.</span>
               </h2>
               <p className="font-sans text-sm sm:text-base text-ink-muted max-w-2xl leading-relaxed">
-                Transforming an artisanal bakery into an irresistible digital &amp; physical sensation. Complete creative direction spanning brand logo vectorization, eco-craft packaging, promotional campaign suites, and high-retention video motion reels.
+                Transforming an artisanal bakery into an irresistible digital &amp; physical sensation. Complete creative direction spanning brand logo vectorization, eco-craft packaging, promotional campaign suites, and AI-generated video motion reels.
               </p>
             </div>
 
@@ -163,7 +164,7 @@ export default function SinghBakeCaseStudy() {
                 <div className="text-xs font-sans text-ink font-semibold flex items-center gap-1.5 flex-wrap">
                   <span className="px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 text-[11px]">Logo Vector</span>
                   <span className="px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 text-[11px]">Packaging Mockup</span>
-                  <span className="px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 text-[11px]">3x Video Reels</span>
+                  <span className="px-2 py-0.5 rounded-md bg-purple-100 text-purple-900 border border-purple-300 font-bold text-[11px]">✨ AI-Generated Video (3x)</span>
                   <span className="px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 text-[11px]">Social Suite</span>
                 </div>
               </div>
@@ -175,7 +176,7 @@ export default function SinghBakeCaseStudy() {
         <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
           {[
             { key: 'all', label: 'Complete 360° Overview' },
-            { key: 'reels', label: 'Motion Reels Theater (3 Videos)' },
+            { key: 'reels', label: '✨ AI Video Reels Theater (3 Videos)' },
             { key: 'packaging', label: 'Packaging & Brand Identity' },
             { key: 'social', label: 'Social Campaign Suite' },
           ].map((tab) => (
@@ -183,11 +184,10 @@ export default function SinghBakeCaseStudy() {
               key={tab.key}
               type="button"
               onClick={() => setActiveTab(tab.key as any)}
-              className={`px-4 py-2 rounded-xl text-xs font-display uppercase tracking-wider font-bold border-2 transition-all duration-150 shrink-0 ${
-                activeTab === tab.key
-                  ? 'bg-ink text-white border-ink shadow-tactile-sm'
-                  : 'bg-white text-ink-muted border-ink/15 hover:border-ink hover:text-ink'
-              }`}
+              className={`px-4 py-2 rounded-xl text-xs font-display uppercase tracking-wider font-bold border-2 transition-all duration-150 shrink-0 ${activeTab === tab.key
+                ? 'bg-ink text-white border-ink shadow-tactile-sm'
+                : 'bg-white text-ink-muted border-ink/15 hover:border-ink hover:text-ink'
+                }`}
             >
               {tab.label}
             </button>
@@ -201,32 +201,59 @@ export default function SinghBakeCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="p-6 sm:p-8 lg:p-10 rounded-3xl border-2 border-ink bg-white shadow-tactile space-y-8"
+            className="p-6 sm:p-8 lg:p-10 rounded-3xl border-2 border-ink bg-white shadow-tactile space-y-6"
           >
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-ink/10 pb-5">
               <div className="space-y-1">
-                <div className="inline-flex items-center gap-1.5 text-xs font-mono text-amber-700 uppercase font-bold">
-                  <Film className="w-4 h-4 text-amber-600" />
-                  <span>Motion &amp; Video Production Engine</span>
+                <div className="inline-flex items-center gap-1.5 text-xs font-mono text-purple-700 bg-purple-100 px-3 py-1 rounded-full uppercase font-bold border border-purple-300">
+                  <Sparkles className="w-3.5 h-3.5 text-purple-600" />
+                  <span>AI Video Generation &amp; Synthesis</span>
                 </div>
                 <h3 className="font-display font-black text-2xl sm:text-3xl text-ink uppercase tracking-tight">
-                  High-Retention Social Reels
+                  Generative AI Video Reels
                 </h3>
               </div>
               <p className="text-xs sm:text-sm font-sans text-ink-muted max-w-md">
-                Engineered with fast visual pacing, punchy typography cuts, and dynamic sound beats designed to stop the scroll on Instagram Reels and TikTok.
+                Crafted using cutting-edge Generative AI video models, custom prompt engineering, and kinetic typography — distinct from standard video shooting or manual reel editing.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              
+            {/* AI Video Production Callout Banner */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-500/10 via-purple-500/10 to-brand-coral/10 border-2 border-ink shadow-tactile-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-xl bg-ink text-white flex items-center justify-center shrink-0 shadow-tactile-sm">
+                  <Sparkles className="w-5 h-5 text-brand-lime" />
+                </div>
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="font-display font-black text-sm uppercase tracking-wide text-ink">
+                      Made With Generative AI Video
+                    </span>
+                    <span className="text-[10px] font-mono font-bold bg-purple-700 text-white px-2 py-0.5 rounded-full uppercase">
+                      Separate from Standard Reel Editing
+                    </span>
+                  </div>
+                  <p className="text-xs font-sans text-ink-muted leading-relaxed max-w-2xl">
+                    These video reels were generated directly using <strong>Generative AI video prompts &amp; neural motion synthesis</strong> (rather than filming real physical footage or standard clip trimming), seamlessly blended with custom pacing, typography, and sound design.
+                  </p>
+                </div>
+              </div>
+              <div className="shrink-0 flex items-center gap-2 font-mono text-[11px] text-ink font-bold bg-white px-3 py-1.5 rounded-xl border-2 border-ink shadow-sm">
+                <Film className="w-3.5 h-3.5 text-purple-600" />
+                <span>AI Prompted &amp; Synthesized</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2">
+
               {/* Left Column: Phone Reel Frame with Real Video Player */}
               <div className="lg:col-span-5 flex justify-center">
                 <div className="relative w-full max-w-[320px] aspect-[9/16] rounded-[36px] border-4 border-ink bg-ink shadow-tactile-lg overflow-hidden flex flex-col justify-between p-3">
-                  
+
                   {/* Phone Notch & Header */}
                   <div className="relative z-20 flex items-center justify-between px-2 pt-1 text-white text-[11px] font-mono">
-                    <span className="bg-black/60 backdrop-blur-sm px-2 py-0.5 rounded-full border border-white/20">
+                    <span className="bg-purple-900/90 text-amber-300 font-bold backdrop-blur-sm px-2.5 py-0.5 rounded-full border border-purple-400/40 flex items-center gap-1">
+                      <Sparkles className="w-3 h-3" />
                       {currentReel.badge}
                     </span>
                     <button
@@ -258,9 +285,8 @@ export default function SinghBakeCaseStudy() {
                     <button
                       type="button"
                       onClick={handleTogglePlay}
-                      className={`absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity duration-200 ${
-                        isPlaying ? 'opacity-0 hover:opacity-100' : 'opacity-100'
-                      }`}
+                      className={`absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity duration-200 ${isPlaying ? 'opacity-0 hover:opacity-100' : 'opacity-100'
+                        }`}
                       aria-label={isPlaying ? 'Pause video' : 'Play video'}
                     >
                       <div className="w-16 h-16 rounded-full bg-white text-ink border-2 border-ink shadow-tactile flex items-center justify-center transform hover:scale-110 transition-transform">
@@ -274,40 +300,43 @@ export default function SinghBakeCaseStudy() {
                   </div>
 
                   {/* Video Bottom Overlay */}
-                  <div className="relative z-20 p-3 bg-gradient-to-t from-black/90 via-black/50 to-transparent rounded-2xl text-white space-y-1">
-                    <div className="text-[10px] font-mono text-amber-300 font-bold uppercase tracking-wider">
-                      @singh.bakehouse • Motion Cut
+                  {/* <div className="relative z-20 p-3 bg-gradient-to-t from-black/90 via-black/50 to-transparent rounded-2xl text-white space-y-1">
+                    <div className="text-[10px] font-mono text-amber-300 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                      <span>@singh.bakehouse</span>
+                      <span>•</span>
+                      <span className="bg-purple-600/80 px-1.5 py-0.5 rounded text-[9px] text-white">AI Generated Reel</span>
                     </div>
                     <div className="font-display font-bold text-xs uppercase leading-snug">
                       {currentReel.title}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
               {/* Right Column: Reel Selector Deck & Technical Specs */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="space-y-3">
-                  <div className="text-xs font-mono uppercase text-ink-muted font-bold">Select Active Reel Cut</div>
+                  <div className="text-xs font-mono uppercase text-ink-muted font-bold flex items-center justify-between">
+                    <span>Select Active Reel Cut</span>
+                    {/* <span className="text-purple-700 font-bold">✨ Generative AI Video</span> */}
+                  </div>
                   <div className="space-y-3">
                     {reels.map((reel, idx) => (
                       <button
                         key={reel.id}
                         type="button"
                         onClick={() => handleSwitchReel(idx)}
-                        className={`w-full p-4 rounded-2xl border-2 text-left transition-all duration-200 flex items-center justify-between gap-4 ${
-                          activeReelIndex === idx
-                            ? 'bg-amber-50 border-amber-600 shadow-tactile-sm translate-x-1'
-                            : 'bg-canvas-subtle/50 border-ink/10 hover:border-ink hover:bg-white'
-                        }`}
+                        className={`w-full p-4 rounded-2xl border-2 text-left transition-all duration-200 flex items-center justify-between gap-4 ${activeReelIndex === idx
+                          ? 'bg-amber-50 border-amber-600 shadow-tactile-sm translate-x-1'
+                          : 'bg-canvas-subtle/50 border-ink/10 hover:border-ink hover:bg-white'
+                          }`}
                       >
                         <div className="flex items-center gap-3">
                           <div
-                            className={`w-10 h-10 rounded-xl border-2 flex items-center justify-center font-display font-black text-sm ${
-                              activeReelIndex === idx
-                                ? 'bg-amber-600 text-white border-amber-700 shadow-sm'
-                                : 'bg-white text-ink border-ink/20'
-                            }`}
+                            className={`w-10 h-10 rounded-xl border-2 flex items-center justify-center font-display font-black text-sm ${activeReelIndex === idx
+                              ? 'bg-amber-600 text-white border-amber-700 shadow-sm'
+                              : 'bg-white text-ink border-ink/20'
+                              }`}
                           >
                             0{idx + 1}
                           </div>
@@ -316,9 +345,9 @@ export default function SinghBakeCaseStudy() {
                               <span className="font-display font-bold text-sm text-ink uppercase">
                                 {reel.title}
                               </span>
-                              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white border border-ink/15 text-ink-muted">
+                              {/* <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-100 border border-purple-300 text-purple-900 font-bold">
                                 {reel.badge}
-                              </span>
+                              </span> */}
                             </div>
                             <p className="text-xs font-sans text-ink-muted line-clamp-1 mt-0.5">
                               {reel.subtitle}
@@ -342,18 +371,24 @@ export default function SinghBakeCaseStudy() {
                 </div>
 
                 {/* Production Metrics Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                  <div className="p-3.5 rounded-xl border-2 border-ink/10 bg-canvas-subtle">
+                    <div className="text-[10px] font-mono uppercase text-ink-muted">Generation</div>
+                    <div className="font-display font-bold text-sm text-purple-700">Generative AI</div>
+                  </div>
                   <div className="p-3.5 rounded-xl border-2 border-ink/10 bg-canvas-subtle">
                     <div className="text-[10px] font-mono uppercase text-ink-muted">Format</div>
                     <div className="font-display font-bold text-sm text-ink">9:16 Vertical</div>
                   </div>
                   <div className="p-3.5 rounded-xl border-2 border-ink/10 bg-canvas-subtle">
-                    <div className="text-[10px] font-mono uppercase text-ink-muted">Frame Rate</div>
-                    <div className="font-display font-bold text-sm text-ink">60 FPS Fluid</div>
+                    <div className="text-[10px] font-mono uppercase text-ink-muted">Workflow</div>
+                    <div className="font-display font-bold text-sm text-ink">Prompt + Motion</div>
                   </div>
-                  <div className="p-3.5 rounded-xl border-2 border-ink/10 bg-canvas-subtle col-span-2 sm:col-span-1">
+                  <div className="p-3.5 rounded-xl border-2 border-ink/10 bg-canvas-subtle">
                     <div className="text-[10px] font-mono uppercase text-ink-muted">Retention Gain</div>
-                    <div className="font-display font-black text-sm text-amber-700">+190% vs Static</div>
+                    <div className="font-display font-black text-sm text-amber-700">
+                      <AnimatedCounter to={190} prefix="+" suffix="%" /> vs Static
+                    </div>
                   </div>
                 </div>
               </div>
@@ -365,7 +400,7 @@ export default function SinghBakeCaseStudy() {
         {/* SECTION 2: Packaging Design & Brand Identity Showcase */}
         {(activeTab === 'all' || activeTab === 'packaging') && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
+
             {/* Left Box: Tactile Packaging Hero Display */}
             <motion.div
               initial={{ opacity: 0, y: 25 }}
@@ -492,7 +527,7 @@ export default function SinghBakeCaseStudy() {
                   <span>Cross-Platform Versatility</span>
                 </div>
                 <p className="text-ink-muted">
-                  Vector assets scale seamlessly from tiny 32px Instagram profile icons to giant 4-meter physical storefront banners without losing visual sharpness.
+                  Vector assets scale seamlessly from tiny 32px digital profile icons to giant 4-meter physical storefront banners without losing visual sharpness.
                 </p>
               </div>
 
@@ -514,7 +549,7 @@ export default function SinghBakeCaseStudy() {
               <div className="space-y-1">
                 <div className="inline-flex items-center gap-1.5 text-xs font-mono text-amber-700 uppercase font-bold">
                   <Sparkles className="w-4 h-4 text-amber-600" />
-                  <span>Instagram Social Campaign Suite</span>
+                  <span>Curated Social Campaign Suite</span>
                 </div>
                 <h3 className="font-display font-black text-2xl sm:text-3xl text-ink uppercase tracking-tight">
                   Scroll-Stopping Feed System
@@ -605,22 +640,65 @@ export default function SinghBakeCaseStudy() {
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-1">
-              <div className="font-display font-black text-2xl sm:text-4xl text-amber-400">+310%</div>
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              whileHover={{ y: -4, scale: 1.02 }}
+              className="p-4 sm:p-5 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-1 hover:border-amber-400/60 hover:shadow-lg transition-all duration-200 group relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 right-0 h-1 bg-amber-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="font-display font-black text-2xl sm:text-4xl text-amber-400 tracking-tight">
+                <AnimatedCounter from={0} to={310} prefix="+" suffix="%" duration={2.2} delay={0.1} />
+              </div>
               <div className="text-xs font-mono text-zinc-400">Social Reach Surge</div>
-            </div>
-            <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-1">
-              <div className="font-display font-black text-2xl sm:text-4xl text-brand-lime">+190%</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              whileHover={{ y: -4, scale: 1.02 }}
+              className="p-4 sm:p-5 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-1 hover:border-brand-lime/60 hover:shadow-lg transition-all duration-200 group relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 right-0 h-1 bg-brand-lime opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="font-display font-black text-2xl sm:text-4xl text-brand-lime tracking-tight">
+                <AnimatedCounter from={0} to={190} prefix="+" suffix="%" duration={2.0} delay={0.2} />
+              </div>
               <div className="text-xs font-mono text-zinc-400">Reel Watch Retention</div>
-            </div>
-            <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-1">
-              <div className="font-display font-black text-2xl sm:text-4xl text-brand-coral">100%</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              whileHover={{ y: -4, scale: 1.02 }}
+              className="p-4 sm:p-5 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-1 hover:border-brand-coral/60 hover:shadow-lg transition-all duration-200 group relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 right-0 h-1 bg-brand-coral opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="font-display font-black text-2xl sm:text-4xl text-brand-coral tracking-tight">
+                <AnimatedCounter from={0} to={100} suffix="%" duration={1.8} delay={0.3} />
+              </div>
               <div className="text-xs font-mono text-zinc-400">Brand Identity Cohesion</div>
-            </div>
-            <div className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-1">
-              <div className="font-display font-black text-2xl sm:text-4xl text-cyan-400">3x</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+              whileHover={{ y: -4, scale: 1.02 }}
+              className="p-4 sm:p-5 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-1 hover:border-cyan-400/60 hover:shadow-lg transition-all duration-200 group relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 right-0 h-1 bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="font-display font-black text-2xl sm:text-4xl text-cyan-400 tracking-tight">
+                <AnimatedCounter from={0} to={3} suffix="x" duration={1.5} delay={0.4} />
+              </div>
               <div className="text-xs font-mono text-zinc-400">Custom Motion Video Cuts</div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
 

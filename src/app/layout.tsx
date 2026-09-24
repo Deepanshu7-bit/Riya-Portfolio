@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     siteName: "Riya Mahajan Portfolio",
     images: [
       {
-        url: "/riya-work/landing-slide.png",
+        url: "/riya-work/landing-slide.svg",
         width: 1200,
         height: 630,
         alt: "Riya Mahajan Creative Design Portfolio",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title: "Riya Mahajan — Creative Designer & Visual Storyteller",
     description:
       "Turning ideas into memorable visual experiences across graphic design, campaigns, branding, and motion.",
-    images: ["/riya-work/landing-slide.png"],
+    images: ["/riya-work/landing-slide.svg"],
   },
   robots: {
     index: true,

@@ -20,7 +20,7 @@ export default function About() {
           <div className="space-y-2 sm:space-y-3">
             <div className="inline-flex items-center gap-2 text-xs font-mono text-brand-coral uppercase tracking-widest">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Personal Story / 09</span>
+              <span>Personal Story / 07</span>
             </div>
             <h2 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl tracking-tight text-ink uppercase">
               Hi, I&apos;m Riya <br />

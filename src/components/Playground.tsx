@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Sparkles, Sliders, Palette, Smartphone, Monitor, Instagram } from 'lucide-react';
+import { Sparkles, Sliders, Palette, Smartphone, Monitor, Eye } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Playground() {
@@ -304,7 +304,7 @@ export default function Playground() {
                       }`}
                     >
                       <span className="font-display font-bold text-xs uppercase flex items-center gap-2">
-                        <Instagram className="w-4 h-4 shrink-0" />
+                        <Eye className="w-4 h-4 shrink-0" />
                         <span>1:1 Square Feed Post</span>
                       </span>
                       <span className="text-[10px] font-mono font-bold shrink-0">1080x1080</span>

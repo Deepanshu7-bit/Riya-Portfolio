@@ -33,7 +33,7 @@ export default function WhyRiya() {
   ];
 
   return (
-    <section className="py-14 sm:py-20 lg:py-24 bg-ink text-white relative overflow-hidden border-y-2 border-ink">
+    <section id="why-riya" className="py-14 sm:py-20 lg:py-24 bg-ink text-white relative overflow-hidden border-y-2 border-ink scroll-mt-20 sm:scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
         {/* Section Header */}
 
