@@ -7,17 +7,17 @@ export const projectsData: Project[] = [
     subtitle: 'End-to-end brand identity, tactile packaging, promotional post suites & high-energy video motion reels',
     category: 'social',
     categoryLabel: 'Brand Socials & Motion',
-    description: 'A complete 360° digital and physical brand transformation for artisanal bakery "Singh Bake & Bites". Created a vibrant, appetising visual language spanning brand logo vectorization, eco-craft paperbag packaging, multi-part social campaign post suites, and high-retention video motion reels.',
+    description: 'A complete 360° digital and physical brand transformation for artisanal bakery "Singh Bake & Bites". Created a vibrant, appetising visual language spanning brand logo vectorization, eco-craft paperbag packaging, multi-part social campaign post suites, and AI-generated video motion reels synthesized via generative AI prompting.',
     challenge: 'Artisanal food brands in a competitive market need more than static photos. They require a cohesive identity system that feels tactile in real life and magnetic on digital feeds, stopping user scrolls within the first 500ms.',
-    visualDirection: 'Warm bakery amber tones, rustic eco-craft textures, modern bold typography, appetizing dynamic close-up framing, and kinetic video motion cuts.',
+    visualDirection: 'Warm bakery amber tones, rustic eco-craft textures, modern bold typography, appetizing dynamic close-up framing, and generative AI video motion synthesis.',
     deliverables: [
       'Brand Identity & Logo Vector Architecture',
       'Eco-Craft Paperbag Packaging Mockup & Print Specs',
-      'Instagram Social Media Campaign Posts (Set of 3+)',
-      'High-Energy Video Motion Reels & Tutorial Cuts',
+      'Social Media Campaign Posts (Set of 3+)',
+      'Generative AI Video Motion Reels & Tutorial Cuts',
       'Promotional Launch Discount Creatives'
     ],
-    tools: ['Figma', 'Photoshop', 'Premiere Pro', 'After Effects'],
+    tools: ['Generative AI Video', 'Figma', 'Photoshop', 'Premiere Pro'],
     colors: [
       { name: 'Bakery Amber', hex: '#E07A28' },
       { name: 'Warm Cream', hex: '#FDFBF7' },
@@ -122,12 +122,12 @@ export const projectsData: Project[] = [
     category: 'social',
     categoryLabel: 'Brand Socials',
     description: 'Product-first, high-appetite social media creatives crafted for food and beverage promotions. Built to create immediate cravings and drive fast promotional conversions.',
-    challenge: 'Creating instant visual appetite appeal within the 1-second scroll window on Instagram while highlighting dynamic pricing and promotional discount mechanics.',
+    challenge: 'Creating instant visual appetite appeal within the 1-second scroll window on social feeds while highlighting dynamic pricing and promotional discount mechanics.',
     visualDirection: 'Dynamic angled product framing, vibrant high-contrast backgrounds, tactile badges, and bold discount callouts that pop off mobile screens.',
     deliverables: [
       'Product Launch Creatives',
       'Limited-Time Offer Graphics',
-      'Instagram Feed & Story Templates',
+      'Social Feed & Story Templates',
       'Promotional Discount Badges'
     ],
     tools: ['Photoshop', 'Figma'],

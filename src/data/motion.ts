@@ -20,7 +20,7 @@ export const motionItems: MotionItem[] = [
     id: 'shalu-nisha-reel-2',
     title: 'Unfiltered Dialogue & Perspectives',
     category: 'Podcast Reel • Conversational Hook',
-    description: 'Dynamic multi-angle speaker framing, sound-sweetened audio cuts, and high-contrast typographic emphasis designed for Instagram Reels & YouTube Shorts retention.',
+    description: 'Dynamic multi-angle speaker framing, sound-sweetened audio cuts, and high-contrast typographic emphasis designed for 9:16 vertical reels & shorts retention.',
     thumbnail: '/riya-work/Design 2.png',
     videoUrl: '/shalu-nisha/podcast-reel-2.mp4',
     duration: '0:35',

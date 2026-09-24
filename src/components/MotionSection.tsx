@@ -208,7 +208,7 @@ export default function MotionSection() {
               Need podcast reels or promotional video cuts?
             </h3>
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-              I handle pacing, kinetic word-by-word subtitles, sound design selection, multi-angle cut switching, color grading, and export optimization for Instagram Reels, YouTube Shorts, and TikTok.
+              I handle pacing, kinetic word-by-word subtitles, sound design selection, multi-angle cut switching, color grading, and export optimization for 9:16 vertical reels, shorts, and social video platforms.
             </p>
           </div>
 

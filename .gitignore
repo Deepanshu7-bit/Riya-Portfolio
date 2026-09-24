@@ -36,3 +36,6 @@ next-env.d.ts
 # raw heavy media sources (processed assets live in /public)
 /Singh bake social media campagin/
 /shalu nisha reels/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat

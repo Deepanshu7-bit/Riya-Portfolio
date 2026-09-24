@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowUp, Instagram, Mail, Phone } from 'lucide-react';
+import { ArrowUp, Mail, Phone } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -35,10 +35,8 @@ export default function Footer() {
             <a href="#work" className="hover:text-brand-coral transition-colors">Work</a>
             <a href="#singh-bake" className="hover:text-brand-coral transition-colors">Case Study</a>
             <a href="#motion" className="hover:text-brand-coral transition-colors">Motion</a>
-            <a href="#services" className="hover:text-brand-coral transition-colors">Services</a>
             <a href="#process" className="hover:text-brand-coral transition-colors">Process</a>
             <a href="#about" className="hover:text-brand-coral transition-colors">About</a>
-            <a href="#playground" className="hover:text-brand-coral transition-colors">Playground</a>
             <a href="#contact" className="hover:text-brand-coral transition-colors">Contact</a>
           </div>
 
@@ -69,15 +67,6 @@ export default function Footer() {
             >
               <Mail className="w-3.5 h-3.5" />
               <span>Email</span>
-            </a>
-            <a
-              href="https://instagram.com/designxriya"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-brand-coral transition-colors flex items-center gap-1.5"
-            >
-              <Instagram className="w-3.5 h-3.5" />
-              <span>Instagram</span>
             </a>
             <a
               href="tel:+918194903223"
