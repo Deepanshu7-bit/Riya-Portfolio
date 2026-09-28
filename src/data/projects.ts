@@ -66,7 +66,6 @@ export const projectsData: Project[] = [
       '/singh-bake/sb-brand-post.png',
       '/singh-bake/biscuit-post.png',
       '/singh-bake/wholesale-post.png',
-      '/singh-bake/post-2.png',
       '/singh-bake/logo.png',
       '/singh-bake/paperbag.png'
     ],
