@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -87,6 +88,7 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-sans bg-canvas text-ink antialiased selection:bg-brand-coral selection:text-white min-h-screen flex flex-col w-full max-w-full overflow-x-hidden`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
