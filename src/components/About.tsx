@@ -114,13 +114,13 @@ export default function About() {
                     PRESENT ROLE
                   </div>
                   <h3 className="font-display font-black text-lg sm:text-xl text-ink">
-                    Graphic Designer
+                    Graphic Designer &amp; Video Editor
                   </h3>
                   <div className="text-xs font-mono text-brand-cobalt font-semibold">
                     Nugen IT Services, Mohali
                   </div>
                   <p className="text-xs font-sans text-ink-muted leading-relaxed pt-1">
-                    Designing social media creatives, high-impact marketing campaigns, promotional flyers, and short-form video edits focused on audience engagement.
+                    Designing multi-channel marketing campaigns, high-converting social media suites, promotional flyers, and pacing high-retention short-form video motion edits.
                   </p>
                 </div>
               </div>
