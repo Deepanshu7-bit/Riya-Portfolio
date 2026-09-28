@@ -85,7 +85,7 @@ export default function SinghBakeCaseStudy() {
     }
   };
 
-  // Social Post Assets (Updated from latest creative suite)
+  // Social Post Assets (Updated unique creative suite)
   const socialPosts = [
     {
       id: 'biscuit-post',
@@ -107,13 +107,6 @@ export default function SinghBakeCaseStudy() {
       tag: 'Post 03 • Brand Identity',
       src: '/singh-bake/sb-brand-post.png',
       desc: 'Official brand identity showcase blending vector marks with mouthwatering bakery assortments for maximum social engagement.',
-    },
-    {
-      id: 'post-2',
-      title: 'Celebration Cakes & Speciality Treats',
-      tag: 'Post 04 • Seasonal Delight',
-      src: '/singh-bake/post-2.png',
-      desc: 'Mouthwatering product photography framing with warm bakery amber tone mapping and celebratory visual rhythm.',
     },
   ];
 
@@ -560,8 +553,8 @@ export default function SinghBakeCaseStudy() {
               </p>
             </div>
 
-            {/* 4 Social Post Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {/* 3 Social Post Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
 
               {socialPosts.map((post, idx) => (
                 <div
