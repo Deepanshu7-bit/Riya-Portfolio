@@ -101,7 +101,7 @@ export default function BehindTheWork() {
         </div>
 
         {/* Visual Anatomy Showcase Card */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
@@ -146,7 +146,7 @@ export default function BehindTheWork() {
               />
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
