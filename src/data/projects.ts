@@ -2,6 +2,43 @@ import { Project } from '@/types';
 
 export const projectsData: Project[] = [
   {
+    id: 'the-beans-coffee-brand',
+    title: 'The Beans: Artisanal Coffee Co. & Takeaway Systems',
+    subtitle: 'Warm tactile cup mockups, vector monogram typography & editorial cold brew campaign posters',
+    category: 'social',
+    categoryLabel: 'Brand Identity & Packaging',
+    description: 'A complete specialty coffee visual identity and takeaway packaging suite for "The Beans". Built around a distinctive typographic logotype integrating a central coffee bean negative space, multi-size eco-craft paper cup mockups with tactile sleeves, and high-editorial cold iced latte promotional launch posters.',
+    challenge: 'Coffee branding in urban cafe markets requires an instant sense of warmth, tactile elegance, and modern editorial distinction that looks mouthwatering both in physical customer hands and on visual social feeds.',
+    visualDirection: 'Earthy espresso mocha, roasted bean tan, warm cream backdrop, elegant high-contrast serif typography with custom bean ligature, and clean product photography styling.',
+    deliverables: [
+      'Brand Identity & Coffee Bean Vector Monogram',
+      'Takeaway Cup Packaging Suite (Multi-Size Mockups)',
+      'Embossed Eco-Kraft Cup Sleeve System',
+      'Cold Iced Latte Editorial Launch Poster',
+      'Menu & Social Media Campaign Creatives'
+    ],
+    tools: ['Figma', 'Photoshop', 'Illustrator'],
+    colors: [
+      { name: 'Roast Espresso', hex: '#3E2415' },
+      { name: 'Warm Cream', hex: '#F6F0E6' },
+      { name: 'Caramel Bean', hex: '#C48A54' },
+      { name: 'Kraft Earth', hex: '#A87A51' }
+    ],
+    heroImage: '/the-beans/cups.png',
+    galleryImages: [
+      '/the-beans/cups.png',
+      '/the-beans/logo.png',
+      '/the-beans/iced-latte.png'
+    ],
+    featured: true,
+    accentColor: '#C48A54',
+    badgeBg: 'bg-amber-600/10 text-amber-800 border-amber-600/30 dark:bg-amber-600/20 dark:text-amber-200',
+    badgeText: 'Featured Case Study',
+    year: '2025',
+    clientContext: 'Full visual identity & physical takeaway collateral for specialty coffee roaster The Beans.',
+    takeaway: 'Tactile physical packaging paired with editorial product photography elevates a local coffee shop into a recognizable lifestyle brand.'
+  },
+  {
     id: 'singh-bake-brand-impression',
     title: 'Singh Bake & Bites: 360° Digital Impression',
     subtitle: 'End-to-end brand identity, tactile packaging, promotional post suites & high-energy video motion reels',
@@ -33,7 +70,6 @@ export const projectsData: Project[] = [
       '/singh-bake/logo.png',
       '/singh-bake/paperbag.png'
     ],
-
     featured: true,
     accentColor: '#E07A28',
     badgeBg: 'bg-amber-500/10 text-amber-700 border-amber-500/30 dark:bg-amber-500/20 dark:text-amber-300',
@@ -117,38 +153,40 @@ export const projectsData: Project[] = [
   },
   {
     id: 'food-beverage-social-suite',
-    title: 'Gourmet Bites & Beverage Social Creatives',
-    subtitle: 'Scroll-stopping promotional creatives and offer-based social ads',
+    title: 'FMCG & Beverage Creatives: Red Bull, Amul & Gourmet Bites',
+    subtitle: 'Feature-callout product posters, packaging before/after redesigns & appetite-first social ads',
     category: 'social',
-    categoryLabel: 'Brand Socials',
-    description: 'Product-first, high-appetite social media creatives crafted for food and beverage promotions. Built to create immediate cravings and drive fast promotional conversions.',
-    challenge: 'Creating instant visual appetite appeal within the 1-second scroll window on social feeds while highlighting dynamic pricing and promotional discount mechanics.',
-    visualDirection: 'Dynamic angled product framing, vibrant high-contrast backgrounds, tactile badges, and bold discount callouts that pop off mobile screens.',
+    categoryLabel: 'Brand Socials & Packaging',
+    description: 'A dynamic suite of FMCG and food & beverage visual creatives spanning benefit-breakdown posters for Red Bull Energy Drink, an illustrative "Before vs After" packaging overhaul case for Amul Masti Dahi, and high-conversion promotional creatives for gourmet food items.',
+    challenge: 'Balancing fast-scanning benefit communication (such as energy, focus, and natural ingredients) with emotional visual warmth and mouthwatering appetite appeal on crowded social feeds.',
+    visualDirection: 'Crisp condensation droplets, dynamic angled product hero shots, rich brand blues and warm dairy pasture greens, clear benefit badges, and before/after problem-solving comparisons.',
     deliverables: [
-      'Product Launch Creatives',
-      'Limited-Time Offer Graphics',
-      'Social Feed & Story Templates',
-      'Promotional Discount Badges'
+      'Red Bull Feature Breakdown & 9:16 Social Poster',
+      'Amul Masti Dahi Packaging Redesign (Before vs After)',
+      'Gourmet Food Launch Creatives & Offer Graphics',
+      'Social Feed & Story Templates'
     ],
-    tools: ['Photoshop', 'Figma'],
+    tools: ['Photoshop', 'Figma', 'Illustrator'],
     colors: [
-      { name: 'Flame Red', hex: '#E63946' },
-      { name: 'Mustard Gold', hex: '#F4A261' },
-      { name: 'Dark Roast', hex: '#1D1A18' },
-      { name: 'Fresh Cream', hex: '#FAF8F5' }
+      { name: 'Red Bull Cobalt', hex: '#002244' },
+      { name: 'Electric Red', hex: '#E63946' },
+      { name: 'Pasture Green', hex: '#2D6A4F' },
+      { name: 'Warm Cream', hex: '#FAF8F5' }
     ],
-    heroImage: '/riya-work/food design 1.png',
+    heroImage: '/creatives/redbull-poster.png',
     galleryImages: [
+      '/creatives/redbull-poster.png',
+      '/creatives/amul-dahi-redesign.png',
       '/riya-work/food design 1.png',
       '/riya-work/food design 2.png'
     ],
     featured: true,
-    accentColor: '#FF4D4D',
-    badgeBg: 'bg-red-500/10 text-red-600 border-red-500/30 dark:bg-red-500/20 dark:text-red-300',
-    badgeText: 'Product Socials',
+    accentColor: '#002244',
+    badgeBg: 'bg-blue-600/10 text-blue-800 border-blue-600/30 dark:bg-blue-600/20 dark:text-blue-200',
+    badgeText: 'FMCG & Packaging',
     year: '2025',
-    clientContext: 'Promotional creatives for quick-service food & beverage campaigns.',
-    takeaway: 'Bold color temperature and mouthwatering product focal points stop the scroll immediately.'
+    clientContext: 'Commercial product posters and packaging transformation studies for leading FMCG brands.',
+    takeaway: 'Clear benefit callouts combined with high-contrast product staging increase viewer retention and conversion.'
   },
   {
     id: 'festive-cultural-campaigns',
