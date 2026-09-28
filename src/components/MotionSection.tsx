@@ -82,7 +82,7 @@ export default function MotionSection() {
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-xs font-mono font-bold text-brand-lime uppercase tracking-wider">
-                  Client Spotlight / Shalu Nisha Podcast
+                  Podcast Reels Showcase / Short-Form Video
                 </span>
                 <span className="px-2 py-0.5 rounded-full bg-brand-lime/20 text-brand-lime text-[10px] font-mono border border-brand-lime/30 hidden sm:inline-block">
                   Featured Reels
@@ -238,7 +238,7 @@ export default function MotionSection() {
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-brand-coral animate-pulse" />
                   <span className="text-xs font-mono text-zinc-300 uppercase font-bold">
-                    {activeReel.client || 'Shalu Nisha Podcast'} • {activeReel.duration}
+                    {activeReel.client || 'Podcast Reel'} • {activeReel.duration}
                   </span>
                 </div>
                 <button

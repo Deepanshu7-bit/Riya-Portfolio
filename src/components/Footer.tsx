@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowUp, Mail, Phone } from 'lucide-react';
+import { ArrowUp, Mail, Phone, FileDown } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
         
         {/* Top Footer Row */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 sm:pb-12 border-b-2 border-ink/10">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 pb-10 sm:pb-12 border-b-2 border-ink/10">
           <div className="space-y-2">
             <Link
               href="/"
@@ -40,18 +40,34 @@ export default function Footer() {
             <a href="#contact" className="hover:text-brand-coral transition-colors">Contact</a>
           </div>
 
+          {/* Action Cluster: Download Resume + Back to Top */}
+          <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 w-full sm:w-auto">
+            <motion.a
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.96 }}
+              href="/Riya_Mahajan_Resume.pdf"
+              download="Riya_Mahajan_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-tactile-coral py-2.5 px-4 text-xs font-display font-bold uppercase tracking-wider flex items-center gap-2 shadow-tactile-sm hover:shadow-tactile transition-all"
+              aria-label="Download Riya Mahajan Resume PDF"
+            >
+              <FileDown className="w-4 h-4" />
+              <span>Download Resume</span>
+            </motion.a>
 
-          <motion.button
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.96 }}
-            type="button"
-            onClick={scrollToTop}
-            className="p-3 rounded-xl border-2 border-ink bg-white shadow-tactile-sm hover:shadow-tactile transition-all text-ink flex items-center gap-2 text-xs font-display font-bold uppercase"
-            aria-label="Back to top"
-          >
-            <span>Back To Top</span>
-            <ArrowUp className="w-4 h-4" />
-          </motion.button>
+            <motion.button
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.96 }}
+              type="button"
+              onClick={scrollToTop}
+              className="p-2.5 sm:p-3 rounded-xl border-2 border-ink bg-white shadow-tactile-sm hover:shadow-tactile transition-all text-ink flex items-center gap-2 text-xs font-display font-bold uppercase shrink-0"
+              aria-label="Back to top"
+            >
+              <span>Back To Top</span>
+              <ArrowUp className="w-4 h-4" />
+            </motion.button>
+          </div>
         </div>
 
         {/* Bottom Metadata Row */}
@@ -61,6 +77,15 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-6">
+            <a
+              href="/Riya_Mahajan_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-brand-coral transition-colors flex items-center gap-1.5 font-medium"
+            >
+              <FileDown className="w-3.5 h-3.5" />
+              <span>Resume (PDF)</span>
+            </a>
             <a
               href="mailto:mahajanriya938@gmail.com"
               className="hover:text-brand-coral transition-colors flex items-center gap-1.5"

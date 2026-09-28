@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Sparkles, GraduationCap, Briefcase, Code, Heart } from 'lucide-react';
+import { Sparkles, GraduationCap, Briefcase, Code, Heart, FileDown, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function About() {
@@ -159,6 +159,37 @@ export default function About() {
                 </div>
               </div>
             </motion.div>
+
+            {/* Resume Download CTA Card */}
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              href="/Riya_Mahajan_Resume.pdf"
+              download="Riya_Mahajan_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 sm:p-5 rounded-2xl border-2 border-ink bg-ink text-canvas-pure shadow-tactile flex items-center justify-between gap-4 group cursor-pointer hover:bg-brand-coral hover:text-white transition-colors"
+              aria-label="Download Riya Mahajan Resume PDF"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-brand-lime group-hover:text-white shrink-0">
+                  <FileDown className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="font-display font-black text-xs sm:text-sm uppercase tracking-wider">
+                    Download Full Resume
+                  </div>
+                  <div className="text-[11px] font-mono text-white/70">
+                    PDF Format • Print &amp; ATS Ready
+                  </div>
+                </div>
+              </div>
+              <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-white/80 group-hover:text-white" />
+            </motion.a>
           </div>
         </div>
       </div>
