@@ -123,7 +123,7 @@ export const motionItems: MotionItem[] = [
   },
   {
     id: 'podcast-reel-sammy',
-    title: 'Gurmantar Singh / Emotional Roots & Cinematic Family Arc',
+    title: 'Gurmanter Singh / Emotional Roots & Cinematic Family Arc',
     category: 'Shallu Nisha Podcast • Narrative Story',
     description: 'Subtle sound bed pacing, cinematic color grade, ambient soundscape design, and smooth dramatic visual cutaways engineered for deep emotional impact.',
     thumbnail: '/podcast-reels/thumbs/narrative-reel.jpg',
