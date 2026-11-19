@@ -45,6 +45,16 @@ export interface ProcessStep {
   accentColor: string;
 }
 
+export interface CreatorSpotlight {
+  id: string;
+  name: string;
+  role: string;
+  category: string;
+  image: string;
+  reelId?: string;
+  tag?: string;
+}
+
 export interface MotionItem {
   id: string;
   title: string;
@@ -60,4 +70,3 @@ export interface MotionItem {
   client?: string;
   tag?: string;
 }
-

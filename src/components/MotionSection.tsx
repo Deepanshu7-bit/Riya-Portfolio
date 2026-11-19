@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { motionItems } from '@/data/motion';
+import { motionItems, creatorSpotlights } from '@/data/motion';
 import { MotionItem } from '@/types';
-import { Play, Pause, Volume2, VolumeX, Sparkles, Film, X, Sliders, Mic, CheckCircle2 } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, Sparkles, Film, X, Sliders, Mic } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function MotionSection() {
@@ -11,37 +11,6 @@ export default function MotionSection() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(false);
   const modalVideoRef = useRef<HTMLVideoElement | null>(null);
-
-  const [selectedThumbnail, setSelectedThumbnail] = useState<{
-    id: string;
-    title: string;
-    format: string;
-    image: string;
-    tag: string;
-    focus: string;
-    description: string;
-  } | null>(null);
-
-  const podcastThumbnails = [
-    {
-      id: 'thumb-youtube-debate',
-      title: 'Ye Baat Yahan Se Shuru Hui... / Podcast Debate Hook',
-      format: '16:9 YouTube Thumbnail',
-      image: '/thumbnails/podcast-argument-thumb.png',
-      tag: 'YouTube 16:9 • High CTR',
-      focus: 'High-Contrast Speech Bubbles, Expressive Reactions & Warm Studio Grading',
-      description: 'Engineered for high organic click-through rate with high-contrast conversational speech bubble typography, expressive speaker reaction framing, and intense warm backlighting.'
-    },
-    {
-      id: 'thumb-shorts-story',
-      title: 'Kuch Baatein Dil Se Hoti Hain / Emotional Narrative',
-      format: '9:16 Shorts & Reels Cover',
-      image: '/thumbnails/podcast-story-thumb.png',
-      tag: 'Vertical 9:16 • Shorts Cover',
-      focus: 'Warm Dialogue Atmosphere, Custom Speech Cloud Accents & Romance Pacing',
-      description: 'Engineered for Instagram Reels and YouTube Shorts feeds with custom illustrated dialogue clouds, romantic warm bokeh tones, and immediate narrative intrigue.'
-    }
-  ];
 
   const handleOpenReel = (reel: MotionItem) => {
     setActiveReel(reel);
@@ -127,7 +96,78 @@ export default function MotionSection() {
 
           <div className="flex items-center gap-2 text-xs font-mono text-zinc-400 shrink-0">
             <span className="w-2 h-2 rounded-full bg-brand-lime animate-pulse" />
-            <span>Click any reel to play full video with sound</span>
+            <span>Click any reel or celebrity to play video with sound</span>
+          </div>
+        </motion.div>
+
+        {/* Moving Line / Marquee: Persons of whom Riya has edited reels */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45 }}
+          className="space-y-3"
+        >
+          <div className="flex items-center justify-between">
+            <div className="inline-flex items-center gap-2 text-xs font-mono text-brand-lime uppercase tracking-wider">
+              <Sparkles className="w-3.5 h-3.5 text-brand-lime" />
+              <span>Celebrities &amp; Creators / Reels Edited by Riya</span>
+            </div>
+            <span className="text-[11px] font-mono text-zinc-400 hidden sm:inline-block">
+              Hover to pause • Click to watch reel cut
+            </span>
+          </div>
+
+          <div className="relative w-full rounded-2xl bg-zinc-900/90 border-2 border-zinc-800 overflow-hidden shadow-tactile-sm py-3.5 sm:py-4">
+            {/* Left & Right Edge Gradients */}
+            <div className="absolute left-0 inset-y-0 w-8 sm:w-16 bg-gradient-to-r from-zinc-900 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 inset-y-0 w-8 sm:w-16 bg-gradient-to-l from-zinc-900 to-transparent z-10 pointer-events-none" />
+
+            <div className="flex animate-marquee whitespace-nowrap hover:[animation-play-state:paused]">
+              {creatorSpotlights.concat(creatorSpotlights).map((person, idx) => {
+                const matchingReel = motionItems.find(m => m.id === person.reelId) || motionItems[0];
+                return (
+                  <div
+                    key={`${person.id}-${idx}`}
+                    onClick={() => handleOpenReel(matchingReel)}
+                    className="inline-flex items-center gap-3.5 mx-3 sm:mx-4 px-4 py-2 rounded-xl bg-black/60 border border-zinc-800 hover:border-brand-lime transition-all duration-200 cursor-pointer group shadow-sm shrink-0"
+                    title={`Click to watch reel cut for ${person.name}`}
+                  >
+                    {/* Circle Shape Photo */}
+                    <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden ring-2 ring-brand-lime/70 group-hover:ring-brand-lime group-hover:scale-105 transition-all duration-200 shrink-0 bg-zinc-800 shadow-tactile-sm">
+                      <img
+                        src={person.image}
+                        alt={person.name}
+                        className="w-full h-full object-cover object-center"
+                      />
+                    </div>
+
+                    {/* Name & Role */}
+                    <div className="text-left">
+                      <div className="flex items-center gap-2">
+                        <span className="font-display font-black text-sm sm:text-base text-white group-hover:text-brand-lime transition-colors">
+                          {person.name}
+                        </span>
+                        <span className="px-1.5 py-0.5 rounded bg-brand-lime/10 border border-brand-lime/30 text-[9px] font-mono text-brand-lime font-bold uppercase">
+                          {person.category}
+                        </span>
+                      </div>
+                      <div className="text-xs font-mono text-zinc-400 group-hover:text-zinc-300">
+                        {person.role}
+                      </div>
+                    </div>
+
+                    {/* Play Indicator */}
+                    <div className="w-7 h-7 rounded-full bg-zinc-800 text-brand-lime flex items-center justify-center opacity-70 group-hover:opacity-100 group-hover:bg-brand-lime group-hover:text-ink transition-all shrink-0 ml-1">
+                      <Play className="w-3 h-3 fill-current ml-0.5" />
+                    </div>
+
+                    {/* Separator Accent */}
+                    <span className="text-zinc-600 text-xs ml-2 select-none">✦</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </motion.div>
 
@@ -139,7 +179,7 @@ export default function MotionSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.45, delay: idx * 0.06 }}
+              transition={{ duration: 0.45, delay: (idx % 4) * 0.06 }}
               whileHover={{ y: -4 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => handleOpenReel(item)}
@@ -147,6 +187,13 @@ export default function MotionSection() {
             >
               {/* Media Thumbnail & Video Preview Container */}
               <div className="relative aspect-[9/16] w-full bg-black overflow-hidden">
+                {item.thumbnail && (
+                  <img
+                    src={item.thumbnail}
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                  />
+                )}
                 {item.videoUrl ? (
                   <video
                     src={item.videoUrl}
@@ -154,7 +201,7 @@ export default function MotionSection() {
                     muted
                     loop
                     preload="metadata"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-85 group-hover:opacity-100"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     onMouseEnter={(e) => {
                       const vid = e.currentTarget;
                       vid.play().catch(() => {});
@@ -185,7 +232,7 @@ export default function MotionSection() {
                   {item.tag || '9:16 REEL'}
                 </div>
 
-                {/* Central Play Button Overlay - Perfectly Centered */}
+                {/* Central Play Button Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-brand-lime text-ink flex items-center justify-center border-2 border-ink shadow-tactile group-hover:scale-110 transition-transform duration-200">
                     <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-ink ml-0.5" />
@@ -219,100 +266,6 @@ export default function MotionSection() {
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* High-CTR Podcast & Video Thumbnails Section */}
-        <div className="space-y-6 pt-6 border-t border-zinc-800">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-3">
-            <div className="space-y-1.5">
-              <div className="inline-flex items-center gap-2 text-xs font-mono text-brand-coral uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Thumbnail Architecture / High-CTR Packaging</span>
-              </div>
-              <h3 className="font-display font-black text-2xl sm:text-4xl text-white uppercase tracking-tight">
-                Podcast &amp; Video Thumbnails
-              </h3>
-            </div>
-            <p className="text-xs font-mono text-zinc-400 max-w-md">
-              Custom-crafted 16:9 YouTube thumbnails and 9:16 vertical covers engineered with emotional facial framing and bold hook typography to stop the scroll.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-            {/* 16:9 Thumbnail (takes 7 cols) */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -4 }}
-              onClick={() => setSelectedThumbnail(podcastThumbnails[0])}
-              className="lg:col-span-7 group cursor-pointer rounded-2xl border-2 border-zinc-800 bg-zinc-900/90 hover:border-brand-coral transition-all duration-300 hover:shadow-tactile-coral flex flex-col justify-between overflow-hidden"
-            >
-              <div className="relative aspect-video w-full bg-black overflow-hidden">
-                <img
-                  src={podcastThumbnails[0].image}
-                  alt={podcastThumbnails[0].title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md border border-brand-coral/40 text-[10px] font-mono font-bold text-brand-coral">
-                  {podcastThumbnails[0].tag}
-                </div>
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="px-3 py-1.5 rounded-full bg-white text-ink text-xs font-display font-bold uppercase shadow-tactile-sm">
-                    Click To Enlarge
-                  </span>
-                </div>
-              </div>
-              <div className="p-4 sm:p-5 space-y-2 bg-zinc-900">
-                <div className="text-[11px] font-mono text-brand-coral font-bold uppercase">
-                  Focus: {podcastThumbnails[0].focus}
-                </div>
-                <h4 className="font-display font-bold text-base text-white group-hover:text-brand-coral transition-colors">
-                  {podcastThumbnails[0].title}
-                </h4>
-                <p className="text-xs text-zinc-400 leading-relaxed">
-                  {podcastThumbnails[0].description}
-                </p>
-              </div>
-            </motion.div>
-
-            {/* 9:16 Thumbnail (takes 5 cols) */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -4 }}
-              onClick={() => setSelectedThumbnail(podcastThumbnails[1])}
-              className="lg:col-span-5 group cursor-pointer rounded-2xl border-2 border-zinc-800 bg-zinc-900/90 hover:border-brand-lime transition-all duration-300 hover:shadow-tactile-lime flex flex-col justify-between overflow-hidden"
-            >
-              <div className="relative aspect-[16/10] lg:aspect-auto lg:h-72 w-full bg-black overflow-hidden">
-                <img
-                  src={podcastThumbnails[1].image}
-                  alt={podcastThumbnails[1].title}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md border border-brand-lime/40 text-[10px] font-mono font-bold text-brand-lime">
-                  {podcastThumbnails[1].tag}
-                </div>
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="px-3 py-1.5 rounded-full bg-white text-ink text-xs font-display font-bold uppercase shadow-tactile-sm">
-                    Click To Enlarge
-                  </span>
-                </div>
-              </div>
-              <div className="p-4 sm:p-5 space-y-2 bg-zinc-900">
-                <div className="text-[11px] font-mono text-brand-lime font-bold uppercase">
-                  Focus: {podcastThumbnails[1].focus}
-                </div>
-                <h4 className="font-display font-bold text-base text-white group-hover:text-brand-lime transition-colors">
-                  {podcastThumbnails[1].title}
-                </h4>
-                <p className="text-xs text-zinc-400 leading-relaxed">
-                  {podcastThumbnails[1].description}
-                </p>
-              </div>
-            </motion.div>
-          </div>
         </div>
 
         {/* Motion Capability Banner */}
@@ -434,7 +387,7 @@ export default function MotionSection() {
                 {/* Quick Switch to Other Podcast Reels */}
                 <div className="space-y-1.5 pt-2 border-t border-zinc-800">
                   <div className="text-[10px] font-mono uppercase text-zinc-400 font-bold">
-                    Switch Podcast Reel Cut:
+                    Switch Reel Cut:
                   </div>
                   <div className="grid grid-cols-4 gap-2">
                     {motionItems.map((item, idx) => (
@@ -444,11 +397,11 @@ export default function MotionSection() {
                         onClick={() => handleOpenReel(item)}
                         className={`p-2 rounded-xl border text-center transition-all text-xs font-mono font-bold ${
                           activeReel.id === item.id
-                            ? 'bg-brand-lime text-ink border-brand-lime'
+                            ? 'bg-brand-lime text-ink border-brand-lime shadow-tactile-sm'
                             : 'bg-zinc-900 text-zinc-300 border-zinc-800 hover:border-zinc-700'
                         }`}
                       >
-                        Cut 0{idx + 1}
+                        0{idx + 1}
                       </button>
                     ))}
                   </div>
@@ -461,67 +414,6 @@ export default function MotionSection() {
                 className="w-full btn-tactile-lime py-2.5 text-xs"
               >
                 Close Player
-              </button>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
-      {/* Thumbnail Lightbox Modal */}
-      <AnimatePresence>
-        {selectedThumbnail && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-black/90 backdrop-blur-lg">
-            <div className="absolute inset-0" onClick={() => setSelectedThumbnail(null)} />
-            
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              transition={{ duration: 0.25 }}
-              className="relative z-10 w-full max-w-2xl bg-zinc-950 border-2 border-brand-coral rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl p-4 sm:p-6 space-y-4 max-h-[92dvh] overflow-y-auto"
-            >
-              <div className="flex items-center justify-between border-b border-zinc-800 pb-3">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-brand-coral animate-pulse" />
-                  <span className="text-xs font-mono text-zinc-300 uppercase font-bold">
-                    {selectedThumbnail.format}
-                  </span>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setSelectedThumbnail(null)}
-                  className="p-1.5 rounded-xl border border-zinc-700 bg-zinc-900 text-white hover:bg-brand-coral transition-colors"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              </div>
-
-              <div className="rounded-2xl overflow-hidden border-2 border-zinc-800 bg-black flex items-center justify-center shadow-tactile">
-                <img
-                  src={selectedThumbnail.image}
-                  alt={selectedThumbnail.title}
-                  className="w-full max-h-[55vh] object-contain"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <div className="text-xs font-mono text-brand-coral font-bold uppercase">
-                  {selectedThumbnail.focus}
-                </div>
-                <h3 className="font-display font-bold text-lg text-white">
-                  {selectedThumbnail.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                  {selectedThumbnail.description}
-                </p>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => setSelectedThumbnail(null)}
-                className="w-full btn-tactile-coral py-2.5 text-xs"
-              >
-                Close Preview
               </button>
             </motion.div>
           </div>
